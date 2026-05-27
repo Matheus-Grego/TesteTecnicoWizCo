@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPedidos.API", "GerenciadorPedidos.API\GerenciadorPedidos.API.csproj", "{00EE509A-DC84-4705-9D94-CF8C87228471}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{753979E3-8883-4C54-B036-B2F7D8DE9EF2}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPedidos.Application", "GerenciadorPedidos.Application\GerenciadorPedidos.Application.csproj", "{FF1138AB-6B52-4463-B0D9-91920DD50624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPedidos.Domain", "GerenciadorPedidos.Domain\GerenciadorPedidos.Domain.csproj", "{3610798A-0BAD-48F2-A288-48A0E1D277EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPedidos.Infrastructure", "GerenciadorPedidos.Infrastructure\GerenciadorPedidos.Infrastructure.csproj", "{8CDF5754-86E1-49F5-93C1-4E789FC4F3E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPedidos.UnitTests", "GerenciadorPedidos.UnitTests\GerenciadorPedidos.UnitTests.csproj", "{2C63491B-0196-4278-9E71-4FEC6330A0A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00EE509A-DC84-4705-9D94-CF8C87228471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EE509A-DC84-4705-9D94-CF8C87228471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EE509A-DC84-4705-9D94-CF8C87228471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EE509A-DC84-4705-9D94-CF8C87228471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1138AB-6B52-4463-B0D9-91920DD50624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1138AB-6B52-4463-B0D9-91920DD50624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1138AB-6B52-4463-B0D9-91920DD50624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1138AB-6B52-4463-B0D9-91920DD50624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3610798A-0BAD-48F2-A288-48A0E1D277EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3610798A-0BAD-48F2-A288-48A0E1D277EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3610798A-0BAD-48F2-A288-48A0E1D277EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3610798A-0BAD-48F2-A288-48A0E1D277EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDF5754-86E1-49F5-93C1-4E789FC4F3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDF5754-86E1-49F5-93C1-4E789FC4F3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDF5754-86E1-49F5-93C1-4E789FC4F3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDF5754-86E1-49F5-93C1-4E789FC4F3E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C63491B-0196-4278-9E71-4FEC6330A0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C63491B-0196-4278-9E71-4FEC6330A0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C63491B-0196-4278-9E71-4FEC6330A0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C63491B-0196-4278-9E71-4FEC6330A0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

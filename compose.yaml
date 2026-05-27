@@ -1,0 +1,7 @@
+﻿services:
+  gerenciadorpedidos.api:
+    image: gerenciadorpedidos.api
+    build:
+      context: .
+      dockerfile: GerenciadorPedidos.API/Dockerfile
+
