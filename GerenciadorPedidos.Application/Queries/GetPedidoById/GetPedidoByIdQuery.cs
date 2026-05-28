@@ -4,7 +4,7 @@ using MediatR;
 
 namespace GerenciadorPedidos.Application.Queries.GetPedidoById;
 
-public class GetPedidoByIdQuery : IRequest<Result<PedidoDTO>>
+public class GetPedidoByIdQuery : IRequest<Result<PedidoDTO?>>
 {
     public GetPedidoByIdQuery(Guid pedidoId)
     {

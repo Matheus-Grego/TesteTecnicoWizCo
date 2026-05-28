@@ -1,3 +1,4 @@
+using GerenciadorPedidos.Application;
 using GerenciadorPedidos.Infrastructure;
 using GerenciadorPedidos.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,11 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection"); 
 builder.Services.AddDbContext<GerenciadorPedidosDbContext>(o => o.UseNpgsql(connectionString));
 
-builder.Services.AddInfrasctucture();
+builder.Services
+    .AddInfrasctucture()
+    .AddAplication();
+
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
