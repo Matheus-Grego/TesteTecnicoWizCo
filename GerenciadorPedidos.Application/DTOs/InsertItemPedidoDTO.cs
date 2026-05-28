@@ -1,6 +1,6 @@
 namespace GerenciadorPedidos.Application.DTOs;
 
-public class InserirItemPedidoDTO
+public class InsertItemPedidoDTO
 {
     public string ProdutoNome { get; set; }
     public int Quantidade { get; set; }

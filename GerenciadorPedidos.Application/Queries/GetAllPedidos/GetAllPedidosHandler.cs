@@ -37,8 +37,23 @@ public class GetAllPedidosHandler : IRequestHandler<GetAllPedidosQuery, Result<L
                     break;
             }
         }
+        
+        int? page = null;
 
-        var result = await _repository.GetAllPedidos(status);
+        if (int.TryParse(request.Page, out var parsedPage) && parsedPage > 0)
+        {
+            page = parsedPage;
+        }
+
+        int? size = null;
+
+        if (int.TryParse(request.Size, out var parsedSize) && parsedSize > 0)
+        {
+            size = parsedSize;
+        }
+
+
+        var result = await _repository.GetAllPedidos(status, page, size);
         var data = result.Select(p => PedidoDTO.FromEntity(p)).ToList();
         return Result<List<PedidoDTO>>.Success(data);
     }

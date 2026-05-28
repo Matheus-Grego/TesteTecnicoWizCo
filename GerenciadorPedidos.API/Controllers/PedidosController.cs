@@ -1,4 +1,5 @@
 using GerenciadorPedidos.Application.Commands.CancelPedido;
+using GerenciadorPedidos.Application.Commands.DeletePedido;
 using GerenciadorPedidos.Application.Commands.InsertPedido;
 using GerenciadorPedidos.Application.Queries.GetAllPedidos;
 using GerenciadorPedidos.Application.Queries.GetPedidoById;
@@ -44,10 +45,19 @@ public class PedidosController : ControllerBase
         return CreatedAtAction(nameof(GetPedidoById), new { id = Guid.Empty }, null);
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("{id}/cancelar")]
     public async Task<IActionResult> CancelPedido(Guid id)
     {
         var result = await _mediator.Send(new CancelPedidoCommand(id));
+        if(!result.IsSuccess)
+            return BadRequest(result.Message);
+        return NoContent();
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeletePedido(Guid id)
+    {
+        var result = await _mediator.Send(new DeletePedidoCommand(id));
         if(!result.IsSuccess)
             return BadRequest(result.Message);
         return NoContent();

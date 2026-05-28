@@ -9,13 +9,13 @@ public class GetAllPedidosQuery : IRequest<Result<List<PedidoDTO>>>
     public GetAllPedidosQuery()
     {
     }
-    public GetAllPedidosQuery(string? status, int? page, int? size)
+    public GetAllPedidosQuery(string? status, string? page, string? size)
     {
         Status = status;
         Page = page;
         Size = size;
     }
     public string? Status { get; set; }
-    public int? Page { get; set; }
-    public int? Size { get; set; }
+    public string? Page { get; set; }
+    public string? Size { get; set; }
 }

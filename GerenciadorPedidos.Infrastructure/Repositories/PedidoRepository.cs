@@ -14,13 +14,20 @@ public class PedidoRepository : IPedidoRepository
     {
         _dbContext = context;
     }
-    public async Task<List<Pedido>> GetAllPedidos(StatusPedidoEnum? status)
+    public async Task<List<Pedido>> GetAllPedidos(StatusPedidoEnum? status, int? page, int? size)
     {
         var query = _dbContext.Pedido.AsNoTracking().Include(x => x.Itens)
             .Where(p => !p.IsDeleted);
 
         if (status.HasValue)
             query = query.Where(p => p.Status == status.Value);
+        
+        if (page.HasValue && size.HasValue)
+        {
+            query = query
+                .Skip((page.Value - 1) * size.Value)
+                .Take(size.Value);
+        }
 
         return await query.ToListAsync();
         
