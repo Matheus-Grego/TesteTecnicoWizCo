@@ -13,6 +13,8 @@ public class Pedido : BaseEntity
     public string ClienteNome { get; private set; }
     public StatusPedidoEnum Status { get; private set; } 
     public decimal ValorTotal { get; private set; }
+    public ICollection<ItemPedido> Itens { get; private set; }
+
     
     public void CancelarPedido()
     {

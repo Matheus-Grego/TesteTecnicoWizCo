@@ -1,3 +1,4 @@
+using GerenciadorPedidos.Application.Commands.InsertPedido;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GerenciadorPedidos.API.Controllers;
@@ -19,7 +20,7 @@ public class PedidosController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult InsertPedido()
+    public IActionResult InsertPedido(InsertPedidoCommand command)
     {
         return CreatedAtAction(nameof(GetPedidoById), new { id = Guid.Empty }, null);
     }

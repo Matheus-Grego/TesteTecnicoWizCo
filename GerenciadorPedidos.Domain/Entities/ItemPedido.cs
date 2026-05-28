@@ -9,10 +9,10 @@ public class ItemPedido : BaseEntity
         Quantidade =  quantidade;
         ValorUnitario = valorUnitario;
     }
-    public Guid PedidoId { get; set; } 
-    public string ProdutoNome { get; set; }
-    public int Quantidade { get; set; }
-    public decimal ValorUnitario { get; set; }
-   
+    public Guid PedidoId { get; private set; } 
+    public string ProdutoNome { get; private set; }
+    public int Quantidade { get; private set; }
+    public decimal ValorUnitario { get; private set; }
+    
     public virtual Pedido Pedido { get; set; }
 }

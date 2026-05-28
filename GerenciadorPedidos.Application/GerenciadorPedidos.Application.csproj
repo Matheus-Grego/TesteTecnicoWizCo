@@ -7,13 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\" />
-      <Folder Include="DTOs\" />
-      <Folder Include="Queries\" />
+      <ProjectReference Include="..\GerenciadorPedidos.Domain\GerenciadorPedidos.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GerenciadorPedidos.Domain\GerenciadorPedidos.Domain.csproj" />
+      <PackageReference Include="MediatR" Version="14.1.0" />
     </ItemGroup>
 
 </Project>
