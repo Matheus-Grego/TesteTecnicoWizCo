@@ -1,4 +1,5 @@
 using GerenciadorPedidos.Domain.Entities;
+using GerenciadorPedidos.Domain.Enums;
 using GerenciadorPedidos.Domain.IRepositories;
 using GerenciadorPedidos.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -13,14 +14,21 @@ public class PedidoRepository : IPedidoRepository
     {
         _dbContext = context;
     }
-    public async Task<List<Pedido>> GetAllPedidos()
+    public async Task<List<Pedido>> GetAllPedidos(StatusPedidoEnum? status)
     {
-       return await _dbContext.Pedido.Where(p => !p.IsDeleted).ToListAsync();
+        var query = _dbContext.Pedido.AsNoTracking().Include(x => x.Itens)
+            .Where(p => !p.IsDeleted);
+
+        if (status.HasValue)
+            query = query.Where(p => p.Status == status.Value);
+
+        return await query.ToListAsync();
+        
     }
 
     public async Task<Pedido?> GetPedidoById(Guid id)
     {
-        return await _dbContext.Pedido.SingleOrDefaultAsync(p => p.Id == id);
+        return await _dbContext.Pedido.AsNoTracking().SingleOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task InsertPedido(Pedido pedido)

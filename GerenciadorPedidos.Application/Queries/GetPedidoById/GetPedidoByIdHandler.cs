@@ -8,7 +8,6 @@ namespace GerenciadorPedidos.Application.Queries.GetPedidoById;
 public class GetPedidoByIdHandler : IRequestHandler<GetPedidoByIdQuery, Result<PedidoDTO?>>
 {
     private readonly IPedidoRepository _repository;
-
     public GetPedidoByIdHandler(IPedidoRepository repository)
     {
         _repository = repository;

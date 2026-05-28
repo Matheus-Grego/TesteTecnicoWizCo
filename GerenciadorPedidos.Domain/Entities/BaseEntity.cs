@@ -5,7 +5,7 @@ public class BaseEntity
     public BaseEntity()
     {
         Id = Guid.NewGuid();
-        DataCriacao = DateTime.Now;
+        DataCriacao = DateTime.UtcNow;
         IsDeleted = false;
     }
     public Guid Id { get; set; }

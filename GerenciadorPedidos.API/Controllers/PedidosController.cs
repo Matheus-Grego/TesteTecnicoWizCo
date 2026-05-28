@@ -1,3 +1,4 @@
+using GerenciadorPedidos.Application.Commands.CancelPedido;
 using GerenciadorPedidos.Application.Commands.InsertPedido;
 using GerenciadorPedidos.Application.Queries.GetAllPedidos;
 using GerenciadorPedidos.Application.Queries.GetPedidoById;
@@ -17,9 +18,9 @@ public class PedidosController : ControllerBase
         _mediator = mediator;
     }
     [HttpGet]
-    public async Task<IActionResult> GetAllPedidos()
+    public async Task<IActionResult> GetAllPedidos([FromQuery] GetAllPedidosQuery query)
     {
-        var result = await _mediator.Send(new GetAllPedidosQuery());
+        var result = await _mediator.Send(query);
         if(!result.IsSuccess)
             return BadRequest(result.Message);
         return Ok(result);
@@ -46,7 +47,7 @@ public class PedidosController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> CancelPedido(Guid id)
     {
-        var result = await _mediator.Send(new GetPedidoByIdQuery(id));
+        var result = await _mediator.Send(new CancelPedidoCommand(id));
         if(!result.IsSuccess)
             return BadRequest(result.Message);
         return NoContent();

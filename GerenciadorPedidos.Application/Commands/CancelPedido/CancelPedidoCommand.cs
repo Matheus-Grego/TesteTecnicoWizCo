@@ -1,6 +1,9 @@
+using GerenciadorPedidos.Application.Common.Result;
+using MediatR;
+
 namespace GerenciadorPedidos.Application.Commands.CancelPedido;
 
-public class CancelPedidoCommand
+public class CancelPedidoCommand : IRequest<Result>
 {
     public CancelPedidoCommand(Guid pedidoId)
     {
