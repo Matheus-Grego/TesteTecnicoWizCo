@@ -15,7 +15,10 @@ public class InsertPedidoHandler : IRequestHandler<InsertPedidoCommand, Result>
     }
     public async Task<Result> Handle(InsertPedidoCommand request, CancellationToken cancellationToken)
     {
-        var pedido = new Pedido(request.ClienteNome, request.ItemsPedido.Sum(x => x.ValorUnitario));
+        var valorTotal = request.ItemsPedido
+            .Sum(x => x.ValorUnitario * x.Quantidade);
+
+        var pedido = new Pedido(request.ClienteNome, valorTotal);
         await _repository.InsertPedido(pedido);
         return Result.Success;
     }
